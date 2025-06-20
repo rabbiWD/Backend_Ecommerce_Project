@@ -1,2 +1,2 @@
-export const PORT =8080;
+export const PORT =8000;
 export const MONGO_URL= process.env.MONGO_URI;
