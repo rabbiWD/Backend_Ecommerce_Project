@@ -10,16 +10,17 @@ import router from "./routes/api.js";
 
 const app = express();
 
+// Security Middleware
 app.use(cookieParser());
 app.use(cors());
 app.use(helmet());
 app.use(hpp());
 
-
+// Parsing
 app.use(express.json({limit: "5mb"}));
 app.use(express.urlencoded({extended: true, limit:"5mb"}));
 
-
+// Rate Limiter
 const Limiter = rateLimit({
     windowMs: 15*60*1000,
     max:1000
