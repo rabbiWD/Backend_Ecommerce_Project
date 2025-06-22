@@ -13,6 +13,6 @@ const DataSchema = new mongoose.Schema(
 }
 );
 
-const ReviewrModel = mongoose.model("reviews", DataSchema);
+const ReviewModel = mongoose.model("reviews", DataSchema);
 
-export default ReviewrModel
+export default ReviewModel
