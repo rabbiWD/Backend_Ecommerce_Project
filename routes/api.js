@@ -22,6 +22,7 @@ router.post('/ProductListByFilter', ProductListByFilter);
 
 // User
 router.get('/UserOTP/:email', UserOTP);
+
 // router.get('/VerifyLogin/:email/:otp',);
 // router.get('/UserLogout',AuthVerification,"");
 // router.get('/ReadProfile',AuthVerification,"");
