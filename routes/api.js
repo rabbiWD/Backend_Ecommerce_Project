@@ -1,6 +1,7 @@
 import express from "express";
 import { CreateReview, ProductBrandList, ProductCategoryList, ProductDetails, ProductListByBrand, ProductListByCategory, ProductListByFilter, ProductListByKeyword, ProductListByRemark, ProductListBySmilier, ProductReviewList, ProductSliderList } from "../src/controllers/ProductController.js";
-import { UserOTP } from "../src/controllers/UserController.js";
+import { CreateProfile, ReadProfile, UpdateProfile, UserLogout, UserOTP, VerifyLogin } from "../src/controllers/UserController.js";
+import { AuthVerification } from "../src/middlewares/AuthVerification.js";
 
 
 const router = express.Router();
@@ -23,11 +24,11 @@ router.post('/ProductListByFilter', ProductListByFilter);
 // User
 router.get('/UserOTP/:email', UserOTP);
 
-// router.get('/VerifyLogin/:email/:otp',);
-// router.get('/UserLogout',AuthVerification,"");
-// router.get('/ReadProfile',AuthVerification,"");
-// router.get('/CreateProfile',AuthVerification,"");
-// router.get('/UpdateProfile',AuthVerification,"");
+router.get('/VerifyLogin/:email/:otp', VerifyLogin);
+router.get('/UserLogout',AuthVerification,UserLogout);
+router.post('/ReadProfile',AuthVerification,CreateProfile);
+router.get('/CreateProfile',AuthVerification, ReadProfile);
+router.put('/UpdateProfile',AuthVerification, UpdateProfile);
 
 // WishList
 // router.get('/SaveWishList',AuthVerification,"");

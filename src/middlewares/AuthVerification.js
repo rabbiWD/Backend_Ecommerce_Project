@@ -1,6 +1,6 @@
 import { DecodeToken } from "../utils/TokenHelper.js";
 
-export const Authverification = (req,res,next)=>{
+export const AuthVerification = (req,res,next)=>{
     const token = req.headers.token || req.cookies.token;
 
     const decoded = DecodeToken(token)
